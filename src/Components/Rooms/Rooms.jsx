@@ -34,7 +34,7 @@ const Rooms = () => {
       <div className="rooms-container">
         <button className="nav-button prev" onClick={prevRoom}>&#9665;</button>
         <div className={`room-card ${slideDirection}`} key={roomsData[currentRoom].id}>
-          <img src={roomsData[currentRoom].image} alt={roomsData[currentRoom].name} className="room-image" />
+          <img src={roomsData[currentRoom].image} alt={roomsData[currentRoom].name} className="room-image" loading="lazy" />
           <h3 className="room-name">{roomsData[currentRoom].name}</h3>
           <p className="room-description">{roomsData[currentRoom].description}</p>
         </div>

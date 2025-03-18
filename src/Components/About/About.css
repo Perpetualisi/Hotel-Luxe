@@ -49,6 +49,8 @@
   
   .about-image {
     flex: 1;
+    height: 200%;
+    /* width: 100vh; */
   }
   
   .about-image img {
