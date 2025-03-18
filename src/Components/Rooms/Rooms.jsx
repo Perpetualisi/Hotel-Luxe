@@ -3,11 +3,11 @@ import "./Rooms.css";
 
 
 const roomsData = [
-  { id: 1, name: "Classic Room", image: "/images/classic_hotel_room.jpg", description: "A cozy room with all basic amenities." },
-  { id: 2, name: "Super Classic Room", image: "/images/Super_Classic_Room.jpg", description: "An upgraded classic room with more space." },
-  { id: 3, name: "Standard Deluxe", image: "/images/Standard_Deluxe_Room.jpg", description: "A luxurious room with deluxe features." },
-  { id: 4, name: "Executive Deluxe", image: "/images/Executive_Deluxe_Room.jpg", description: "A premium room for executives." },
-  { id: 5, name: "Business Suite", image: "/images/Business_Suite_Room.jpg", description: "A spacious suite designed for business travelers." }
+  { id: 1, name: "Classic Room", image: "/images/classic_hotel_room-min.jpg", description: "A cozy room with all basic amenities." },
+  { id: 2, name: "Super Classic Room", image: "/images/Super_Classic_Room-min.jpg", description: "An upgraded classic room with more space." },
+  { id: 3, name: "Standard Deluxe", image: "/images/Standard_Deluxe_Room-min.jpg", description: "A luxurious room with deluxe features." },
+  { id: 4, name: "Executive Deluxe", image: "/images/Executive_Deluxe_Room (1)-min.jpg", description: "A premium room for executives." },
+  { id: 5, name: "Business Suite", image: "/images/Business_Suite_Room-min.jpg", description: "A spacious suite designed for business travelers." }
 ];
 
 const Rooms = () => {
