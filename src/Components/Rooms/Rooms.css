@@ -1,0 +1,165 @@
+/* Rooms Section */
+.rooms-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Room Slider Container */
+.rooms-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Room Card */
+.room-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  opacity: 1;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.room-card img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.room-name {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #222;
+}
+
+.room-description {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Navigation Buttons */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.nav-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Sliding Animation */
+.next {
+  animation: slideInRight 0.5s ease-in-out;
+}
+
+.prev {
+  animation: slideInLeft 0.5s ease-in-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .rooms-container {
+    max-width: 90%;
+    flex-direction: column;
+  }
+
+  .room-card {
+    padding: 15px;
+  }
+
+  .room-name {
+    font-size: 1.2rem;
+  }
+
+  .room-description {
+    font-size: 0.9rem;
+  }
+
+  .nav-button {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rooms-section {
+    padding: 30px 10px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .room-card {
+    padding: 10px;
+  }
+
+  .room-name {
+    font-size: 1.1rem;
+  }
+
+  .room-description {
+    font-size: 0.85rem;
+  }
+
+  .nav-button {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+}
