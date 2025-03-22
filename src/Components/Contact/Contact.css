@@ -1,6 +1,6 @@
-/* Dark Theme Contact Section */
+
 .contact-container {
-    background: #121212; /* Dark background */
+    background: #121212; 
     color: #fff;
     padding: 60px 20px;
     text-align: center;
@@ -21,7 +21,6 @@
     color: #bbb;
 }
 
-/* Contact Form */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -65,7 +64,7 @@
     background: #e68900;
 }
 
-/* Animations */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -84,7 +83,7 @@
     }
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .contact-container {
         padding: 40px 15px;

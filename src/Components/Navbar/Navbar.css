@@ -10,7 +10,6 @@
   color: white;
   background: transparent;
   z-index: 9999;
-  /* padding: 0 -1px; */
   transition: background 0.3s ease-in-out;
 }
 
@@ -19,7 +18,7 @@
   background: rgba(0, 0, 0, 0.8);
 }
 .navbar ul {
-  padding-right: 50px; /* Moves the nav links inward */
+  padding-right: 50px; 
 }
 
 
@@ -45,29 +44,26 @@
   color: #f5a623;
 }
 
-/* Hide Hamburger on Large Screens */
 .hamburger {
   display: none;
 }
 
-/* Responsive Navbar */
 @media (max-width: 768px) {
   .hamburger {
-    position: absolute !important;
-    top: 15px !important;
+    position: absolute ;
+    top: 15px;
     right: 60px ;
-    display: block !important;
-    font-size: 30px !important;
-    color: white !important;
-    /* background: red !important; */
-    padding: 10px !important;
-    border-radius: 5px; /* Optional: Make it rounded */
-    z-index: 9999 !important;
+    display: block ;
+    font-size: 30px ;
+    color: white ;
+    padding: 10px;
+    border-radius: 5px; 
+    z-index: 9999 ;
   }
   
 
   .nav-links {
-    display: none; /* Hide by default */
+    display: none; 
     flex-direction: column;
     position: absolute;
     top: 60px;
@@ -79,6 +75,6 @@
   }
 
   .nav-links.open {
-    display: flex; /* Show menu when open */
+    display: flex; 
   }
 }

@@ -24,7 +24,7 @@ const Navbar = () => {
 
       <div className="hamburger" onClick={() => {
   setMenuOpen(!menuOpen);
-  console.log("Hamburger clicked!"); // Debugging
+  console.log("Hamburger clicked!"); 
 }}>
   ☰
 </div>

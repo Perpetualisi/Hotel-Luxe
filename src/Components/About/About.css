@@ -50,7 +50,7 @@
   .about-image {
     flex: 1;
     height: 200%;
-    /* width: 100vh; */
+    
   }
   
   .about-image img {
@@ -60,7 +60,7 @@
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
   }
   
-  /* Mobile Responsive */
+
   @media (max-width: 768px) {
     .about .container {
       flex-direction: column;

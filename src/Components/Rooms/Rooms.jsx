@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import "./Rooms.css";
 
-
 const roomsData = [
-  { id: 1, name: "Classic Room", image: "/images/classic_hotel_room-min.jpg", description: "A cozy room with all basic amenities." },
-  { id: 2, name: "Super Classic Room", image: "/images/Super_Classic_Room-min.jpg", description: "An upgraded classic room with more space." },
-  { id: 3, name: "Standard Deluxe", image: "/images/Standard_Deluxe_Room-min.jpg", description: "A luxurious room with deluxe features." },
-  { id: 4, name: "Executive Deluxe", image: "/images/Executive_Deluxe_Room (1)-min.jpg", description: "A premium room for executives." },
-  { id: 5, name: "Business Suite", image: "/images/Business_Suite_Room-min.jpg", description: "A spacious suite designed for business travelers." }
+  { id: 1, name: "Classic Room", video: "https://res.cloudinary.com/dlxbur3on/video/upload/v1742560040/classic_vmrxsn.mp4", description: "A cozy room with all basic amenities." },
+  { id: 2, name: "Super Classic Room", video: "https://res.cloudinary.com/dlxbur3on/video/upload/v1742559633/standard_ufzylf.mp4", description: "An upgraded classic room with more space." },
+  { id: 3, name: "Standard Deluxe", video: "https://res.cloudinary.com/dlxbur3on/video/upload/v1742560977/stan1_jm2xec.mp4", description: "A luxurious room with deluxe features." },
+  { id: 4, name: "Executive Deluxe", video: "https://res.cloudinary.com/dlxbur3on/video/upload/v1742561330/8849242-hd_1920_1080_24fps_n9mss0.mp4", description: "A premium room for executives." },
+  { id: 5, name: "Business Suite", video: "https://res.cloudinary.com/dlxbur3on/video/upload/v1742559624/business_suite_jzb4qm.mp4", description: "A spacious suite designed for business travelers." }
 ];
 
 const Rooms = () => {
@@ -34,7 +33,10 @@ const Rooms = () => {
       <div className="rooms-container">
         <button className="nav-button prev" onClick={prevRoom}>&#9665;</button>
         <div className={`room-card ${slideDirection}`} key={roomsData[currentRoom].id}>
-          <img src={roomsData[currentRoom].image} alt={roomsData[currentRoom].name} className="room-image" loading="lazy" />
+          <video className="room-video" autoPlay loop muted playsInline>
+            <source src={roomsData[currentRoom].video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <h3 className="room-name">{roomsData[currentRoom].name}</h3>
           <p className="room-description">{roomsData[currentRoom].description}</p>
         </div>
