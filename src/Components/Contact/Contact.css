@@ -27,6 +27,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: center;
   }
   
   .contact-form input,
@@ -36,6 +37,7 @@
     border-radius: 10px;
     font-size: 1rem;
     width: 100%;
+    max-width: 500px;
     resize: none;
     transition: border 0.3s ease;
   }
@@ -57,6 +59,8 @@
     border-radius: 10px;
     cursor: pointer;
     transition: background 0.3s;
+    width: 100%;
+    max-width: 500px;
   }
   
   .contact-form button:hover {
@@ -95,6 +99,7 @@
     display: flex;
     gap: 15px;
     margin-top: 15px;
+    justify-content: center;
     flex-wrap: wrap;
   }
   
@@ -131,8 +136,44 @@
       font-size: 0.95rem;
     }
   
+    .contact-form input,
+    .contact-form textarea {
+      max-width: 100%;
+    }
+  
+    .contact-details {
+      font-size: 0.9rem;
+    }
+  
     .social-links {
       justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-container {
+      padding: 30px 10px;
+    }
+  
+    .contact-container h2 {
+      font-size: 1.8rem;
+    }
+  
+    .contact-container p {
+      font-size: 0.9rem;
+    }
+  
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+    }
+  
+    .contact-form button {
+      padding: 12px;
+    }
+  
+    .social-links a {
+      padding: 6px 10px;
     }
   }
   
