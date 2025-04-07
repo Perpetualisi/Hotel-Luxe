@@ -1,170 +1,72 @@
-
 .rooms-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
   text-align: center;
-  padding: 50px 20px;
-  background-color: #f8f8f8;
 }
 
 .section-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #333;
+  font-size: 2.5rem;
+  color: #003580;
+  margin-bottom: 40px;
 }
 
 .rooms-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   max-width: 900px;
   margin: 0 auto;
+  position: relative;
 }
 
 .room-card {
-  width: 50%;
-  max-width: 800px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.4s ease-in-out;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  padding: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.room-card.fade {
+  animation: fadeIn 1s ease-in-out;
 }
 
 .room-video {
   width: 100%;
   height: auto;
   max-height: 450px;
-  border-radius: 10px;
+  object-fit: cover;
+  display: block;
 }
 
-/* Room details */
 .room-name {
-  font-size: 1.5rem;
-  margin-top: 15px;
-  color: #222;
+  font-size: 1.8rem;
+  margin: 15px 0 10px;
+  color: #003580;
 }
 
 .room-description {
   font-size: 1rem;
-  color: #666;
-  margin-top: 10px;
+  padding: 0 20px 20px;
+  color: #444;
 }
 
-/* Navigation buttons */
-.nav-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  border: none;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease, transform 0.2s ease;
-  z-index: 10;
-}
-
-.nav-button:hover {
-  background: rgba(0, 0, 0, 0.9);
-  transform: scale(1.1);
-}
-
-.prev {
-  left: -60px;
-}
-
-.next {
-  right: -60px;
-}
-
-
-@media (max-width: 1024px) {
-  .rooms-container {
-    max-width: 90%;
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
   }
-
-  .room-card {
-    max-width: 700px;
-  }
-
-  .room-video {
-    max-height: 350px;
-  }
-
-  .nav-button {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-
-  .prev {
-    left: -40px;
-  }
-
-  .next {
-    right: -40px;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-@media (max-width: 768px) {
-  .rooms-container {
-    flex-direction: column;
-  }
-
-  .room-card {
-    width: 95%;
-  }
-
-  .room-video {
-    max-height: 280px;
-  }
-
-  .nav-button {
-    width: 35px;
-    height: 35px;
-    font-size: 14px;
-  }
-
-  .prev {
-    left: 5px;
-  }
-
-  .next {
-    right: 5px;
-  }
-}
-
-@media (max-width: 480px) {
+/* Mobile */
+@media screen and (max-width: 768px) {
   .room-name {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
-
   .room-description {
-    font-size: 0.9rem;
-  }
-
-  .room-video {
-    max-height: 220px;
-  }
-
-  .nav-button {
-    width: 30px;
-    height: 30px;
-    font-size: 12px;
-  }
-
-  .prev {
-    left: 2px;
-  }
-
-  .next {
-    right: 2px;
+    font-size: 0.95rem;
   }
 }

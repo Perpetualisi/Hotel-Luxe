@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Rooms.css";
 
 const roomsData = [
@@ -11,28 +11,20 @@ const roomsData = [
 
 const Rooms = () => {
   const [currentRoom, setCurrentRoom] = useState(0);
-  const [slideDirection, setSlideDirection] = useState("next");
 
-  const nextRoom = () => {
-    setSlideDirection("next");
-    setTimeout(() => {
+  useEffect(() => {
+    const interval = setInterval(() => {
       setCurrentRoom((prev) => (prev + 1) % roomsData.length);
-    }, 300);
-  };
+    }, 6000);
 
-  const prevRoom = () => {
-    setSlideDirection("prev");
-    setTimeout(() => {
-      setCurrentRoom((prev) => (prev - 1 + roomsData.length) % roomsData.length);
-    }, 300);
-  };
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section id="rooms" className="rooms-section">
       <h2 className="section-title">Our Rooms</h2>
       <div className="rooms-container">
-        <button className="nav-button prev" onClick={prevRoom}>&#9665;</button>
-        <div className={`room-card ${slideDirection}`} key={roomsData[currentRoom].id}>
+        <div className="room-card fade" key={roomsData[currentRoom].id}>
           <video className="room-video" autoPlay loop muted playsInline>
             <source src={roomsData[currentRoom].video} type="video/mp4" />
             Your browser does not support the video tag.
@@ -40,7 +32,6 @@ const Rooms = () => {
           <h3 className="room-name">{roomsData[currentRoom].name}</h3>
           <p className="room-description">{roomsData[currentRoom].description}</p>
         </div>
-        <button className="nav-button next" onClick={nextRoom}>&#9655;</button>
       </div>
     </section>
   );

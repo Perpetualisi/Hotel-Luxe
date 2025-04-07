@@ -12,7 +12,11 @@ const About = () => {
           <p>
             Indulge in our exquisite dining, relax at our spa, and enjoy top-tier hospitality like never before.
           </p>
-          <button className="btn">Learn More</button>
+          
+          <a href="#contact">
+  <button className="btn">Learn More</button>
+</a>
+
         </div>
         <div className="about-image">
           <img src="/images/about-min.jpg" alt="Hotel Lobby" loading="lazy" />

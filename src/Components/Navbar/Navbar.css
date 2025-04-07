@@ -15,7 +15,7 @@
 
 
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.8);
+  background: black;
 }
 .navbar ul {
   padding-right: 50px; 
@@ -46,13 +46,14 @@
 
 .hamburger {
   display: none;
+  right: 50px;
 }
 
 @media (max-width: 768px) {
   .hamburger {
     position: absolute ;
-    top: 15px;
-    right: 60px ;
+    top: 10px;
+    right: 40px ;
     display: block ;
     font-size: 30px ;
     color: white ;

@@ -7,34 +7,30 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleLinkClick = () => {
+    setMenuOpen(false); // Close menu when link is clicked
+  };
+
   return (
-    <nav  className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="logo">Hotel Luxe 🏰</div>
 
-      <div className="hamburger" onClick={() => {
-  setMenuOpen(!menuOpen);
-  console.log("Hamburger clicked!"); 
-}}>
-  ☰
-</div>
-
+      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? "✖" : "☰"}
+      </div>
 
       <ul className={menuOpen ? "nav-links open" : "nav-links"}>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#rooms">Rooms</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#hero" onClick={handleLinkClick}>Home</a></li>
+        <li><a href="#rooms" onClick={handleLinkClick}>Rooms</a></li>
+        <li><a href="#about" onClick={handleLinkClick}>About</a></li>
+        <li><a href="#contact" onClick={handleLinkClick}>Contact</a></li>
       </ul>
     </nav>
   );
