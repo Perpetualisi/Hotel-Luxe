@@ -1,6 +1,7 @@
 
+# **Hotel Luxe**
 
-**Hotel Luxe** is a luxury hotel website showcasing various room categories, amenities, and contact information. The website features a fully responsive design, smooth animations, and a clean user interface for an enhanced user experience.
+Hotel Luxe is a luxury hotel website showcasing various room categories, amenities, and contact information. The website features a fully responsive design, smooth animations, and a clean user interface for an enhanced user experience.
 
 ## Features
 
@@ -51,6 +52,12 @@ To get started with the project, follow these steps:
    ```
 
 5. Open your browser and go to `http://localhost:3000` to view the website.
+
+## Live Demo
+
+You can view a live demo of the website here:
+
+[Hotel Luxe - Live Demo](https://hotel-luxe-six.vercel.app/)
 
 ## Folder Structure
 
@@ -118,6 +125,4 @@ If you have any questions, feel free to contact me at:
 
 - Thanks to [Vite](https://vitejs.dev/) for providing an easy and fast development environment.
 - Special thanks to [Framer Motion](https://www.framer.com/motion/) for the smooth animations used throughout the project.
-
----
 
