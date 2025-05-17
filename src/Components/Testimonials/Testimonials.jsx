@@ -5,17 +5,17 @@ const testimonials = [
   {
     name: 'Jane Doe',
     review: 'Absolutely loved my stay! Clean rooms and excellent service.',
-    image: 'https://i.pravatar.cc/150?img=1',
+    image: '/images/jane.jpg',
   },
   {
     name: 'John Smith',
     review: 'A peaceful getaway with amazing food and ambiance.',
-    image: 'https://i.pravatar.cc/150?img=2',
+    image: '/images/JohnSmith.jpg',
   },
   {
     name: 'Maria Gonzalez',
     review: 'Staff were kind and very helpful. Highly recommended!',
-    image: 'https://i.pravatar.cc/150?img=3',
+    image: '/images/maria.jpg',
   },
 ];
 
