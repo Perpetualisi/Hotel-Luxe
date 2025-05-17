@@ -1,13 +1,13 @@
 .hero {
   min-height: 100vh;
-  width: 100%; /* Prevent horizontal scroll */
-  background: url('/images/hero bg-min.jpg') no-repeat center center;
+  width: 100%; 
+  background: url('/images/hero.jpg') no-repeat center center;
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: black;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -70,6 +70,22 @@
 .btn:hover {
   background: #ffa500;
 }
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.hero-title span {
+  color: hsl(56, 92%, 44%); /* gold or brand color */
+}
+
+.hero-subtitle {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  color: #f0f0f0;
+}
+
 
 /* ✅ Mobile Responsive Fix */
 @media (max-width: 768px) {

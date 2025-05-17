@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div className="logo">Hotel Luxe 🏰</div>
+      <div className="logo">Luxe🏰</div>
 
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? "✖" : "☰"}
@@ -29,6 +29,8 @@ const Navbar = () => {
       <ul className={menuOpen ? "nav-links open" : "nav-links"}>
         <li><a href="#hero" onClick={handleLinkClick}>Home</a></li>
         <li><a href="#rooms" onClick={handleLinkClick}>Rooms</a></li>
+        <li><a href="#booking" onClick={handleLinkClick}>Booking</a></li>
+        <li><a href="#testimonials" onClick={handleLinkClick}>Testimonials</a></li>
         <li><a href="#about" onClick={handleLinkClick}>About</a></li>
         <li><a href="#contact" onClick={handleLinkClick}>Contact</a></li>
       </ul>
