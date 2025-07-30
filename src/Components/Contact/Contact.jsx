@@ -12,15 +12,16 @@ const Contact = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.message) {
-      setError("All fields are required.");
+    const { name, email, message } = formData;
+
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      setError("Please fill in all fields.");
       setSuccess("");
       return;
     }
@@ -29,9 +30,7 @@ const Contact = () => {
     setSuccess("Message sent successfully!");
     setFormData({ name: "", email: "", message: "" });
 
-    setTimeout(() => {
-      setSuccess("");
-    }, 5000);
+    setTimeout(() => setSuccess(""), 5000);
   };
 
   return (
@@ -43,16 +42,19 @@ const Contact = () => {
       transition={{ duration: 1.2 }}
     >
       <h2>Contact Us</h2>
-      <p>We'd love to hear from you! Send us a message below or reach out on social media.</p>
+      <p>We'd love to hear from you! Send us a message below.</p>
 
       <motion.form
         className="contact-form"
         onSubmit={handleSubmit}
-        initial={{ scale: 0.9, opacity: 0 }}
+        initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.8 }}
+        noValidate
       >
+        <label htmlFor="name" className="visually-hidden">Name</label>
         <input
+          id="name"
           type="text"
           name="name"
           placeholder="Your Full Name"
@@ -60,7 +62,10 @@ const Contact = () => {
           onChange={handleChange}
           required
         />
+
+        <label htmlFor="email" className="visually-hidden">Email</label>
         <input
+          id="email"
           type="email"
           name="email"
           placeholder="Your Email Address"
@@ -68,13 +73,16 @@ const Contact = () => {
           onChange={handleChange}
           required
         />
+
+        <label htmlFor="message" className="visually-hidden">Message</label>
         <textarea
+          id="message"
           name="message"
           placeholder="Type your message here..."
           value={formData.message}
           onChange={handleChange}
           required
-        ></textarea>
+        />
 
         {error && <p className="error-message">{error}</p>}
         {success && <p className="success-message">{success}</p>}

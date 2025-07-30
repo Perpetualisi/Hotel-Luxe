@@ -15,24 +15,29 @@ const Navbar = () => {
   }, []);
 
   const handleLinkClick = () => {
-    setMenuOpen(false); // Close menu when link is clicked
+    setMenuOpen(false); 
   };
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="logo">Luxe🏰</div>
 
-      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+      <button
+        className="hamburger"
+        aria-label="Toggle menu"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
         {menuOpen ? "✖" : "☰"}
-      </div>
+      </button>
 
-      <ul className={menuOpen ? "nav-links open" : "nav-links"}>
-        <li><a href="#hero" onClick={handleLinkClick}>Home</a></li>
-        <li><a href="#rooms" onClick={handleLinkClick}>Rooms</a></li>
-        <li><a href="#booking" onClick={handleLinkClick}>Booking</a></li>
-        <li><a href="#testimonials" onClick={handleLinkClick}>Testimonials</a></li>
-        <li><a href="#about" onClick={handleLinkClick}>About</a></li>
-        <li><a href="#contact" onClick={handleLinkClick}>Contact</a></li>
+      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+        {["home", "rooms", "booking", "testimonials", "about", "contact"].map((id) => (
+          <li key={id}>
+            <a href={`#${id}`} onClick={handleLinkClick}>
+              {id.charAt(0).toUpperCase() + id.slice(1)}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );

@@ -42,11 +42,16 @@ const roomsData = [
 const Rooms = () => {
   const [currentRoom, setCurrentRoom] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRoom((prev) => (prev + 1) % roomsData.length);
-    }, 5000);
+  const nextRoom = () => {
+    setCurrentRoom((prev) => (prev + 1) % roomsData.length);
+  };
 
+  const prevRoom = () => {
+    setCurrentRoom((prev) => (prev - 1 + roomsData.length) % roomsData.length);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(nextRoom, 7000);
     return () => clearInterval(interval);
   }, []);
 
@@ -54,6 +59,7 @@ const Rooms = () => {
     <section id="rooms" className="rooms-section">
       <h2 className="section-title">Our Rooms</h2>
       <div className="rooms-container">
+        <button className="room-btn left" onClick={prevRoom}>&#10094;</button>
         <div className="room-card fade" key={roomsData[currentRoom].id}>
           <img
             src={roomsData[currentRoom].image}
@@ -64,6 +70,7 @@ const Rooms = () => {
           <p className="room-description">{roomsData[currentRoom].description}</p>
           <p className="room-price">{roomsData[currentRoom].price}</p>
         </div>
+        <button className="room-btn right" onClick={nextRoom}>&#10095;</button>
       </div>
     </section>
   );

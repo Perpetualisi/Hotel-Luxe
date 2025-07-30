@@ -10,6 +10,7 @@ const Footer = () => {
           <h3>Hotel Luxe</h3>
           <p>Experience luxury and comfort with us.</p>
         </div>
+
         <div className="footer-section">
           <h3>Quick Links</h3>
           <ul>
@@ -21,23 +22,26 @@ const Footer = () => {
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
+
         <div className="footer-section">
           <h3>Contact</h3>
           <p>Email: info@hotel.com</p>
-          <p>Phone: +234-810-355-8837</p>
+          <p>Phone: +234-123-456-7890</p>
           <p>Location: Lagos, Nigeria</p>
         </div>
+
         <div className="footer-section social-icons">
           <h3>Follow Us</h3>
           <div className="icons">
-            <a href="#"><FaFacebook /></a>
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaInstagram /></a>
+            <a href="#" aria-label="Facebook"><FaFacebook /></a>
+            <a href="#" aria-label="Twitter"><FaTwitter /></a>
+            <a href="#" aria-label="Instagram"><FaInstagram /></a>
           </div>
         </div>
       </div>
+
       <div className="footer-bottom">
-        <p>&copy; 2025 Hotel Name. All rights reserved.</p>
+        <p>&copy; 2025 Hotel Luxe. All rights reserved.</p>
       </div>
     </footer>
   );

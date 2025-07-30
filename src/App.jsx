@@ -6,7 +6,7 @@ import Hero from "./Components/Hero/Hero";
 import Navbar from "./Components/Navbar/Navbar";
 import Rooms from "./Components/Rooms/Rooms";
 import Testimonials from "./Components/Testimonials/Testimonials";
-
+import "./App.css"
 
 const App = () => {
   return (

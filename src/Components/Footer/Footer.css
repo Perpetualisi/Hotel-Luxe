@@ -1,71 +1,95 @@
-footer {
-    background: #222;
-    color: #fff;
-    padding: 20px 0;
+.footer {
+  background: #1a1a1a;
+  color: #f1f1f1;
+  padding: 40px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-section h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #f4a261;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 14px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #f4a261;
+}
+
+.social-icons .icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons .icons a {
+  color: #ccc;
+  font-size: 22px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons .icons a:hover {
+  color: #f4a261;
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
-  
-  .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-  }
-  
+
   .footer-section {
-    flex: 1;
-    min-width: 200px;
-    margin: 10px;
+    margin-bottom: 20px;
   }
-  
-  .footer-section h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+
+  .social-icons .icons {
+    justify-content: center;
   }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin: 5px 0;
-  }
-  
-  .footer-section ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-section ul li a:hover {
-    color: #f4a261;
-  }
-  
-  .social-icons .icons a {
-    color: #fff;
-    font-size: 20px;
-    margin: 0 10px;
-    transition: color 0.3s;
-  }
-  
-  .social-icons .icons a:hover {
-    color: #f4a261;
-  }
-  
-  .footer-bottom {
-    margin-top: 20px;
-    font-size: 14px;
-    border-top: 1px solid #444;
-    padding-top: 10px;
-  }
-  
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      text-align: center;
-    }
-  }
-  
+}

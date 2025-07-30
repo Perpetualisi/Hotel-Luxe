@@ -1,15 +1,18 @@
 .rooms-section {
-  padding: 2rem;
+  padding: 3rem 1rem;
   background: #f4f4f4;
   text-align: center;
+  scroll-margin-top: 80px;
 }
 
 .section-title {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  color: #003580;
 }
 
 .rooms-container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,36 +21,72 @@
 .room-card {
   background: white;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1.5rem;
   width: 90%;
   max-width: 600px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1s ease-in-out;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease;
+  text-align: center;
+  z-index: 1;
 }
 
 .room-image {
   width: 100%;
-  height: auto;
+  height: 250px;
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1rem;
-  object-fit: cover;
 }
 
 .room-name {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  color: #222;
   margin: 0.5rem 0;
-  color: #333;
 }
 
 .room-description {
   font-size: 1rem;
   color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.room-price {
+  font-size: 1.1rem;
+  color: #003580;
+  font-weight: bold;
+}
+
+.room-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.room-btn:hover {
+  background: rgba(0,0,0,0.5);
+}
+
+.room-btn.left {
+  left: -20px;
+}
+
+.room-btn.right {
+  right: -20px;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
@@ -56,16 +95,29 @@
 }
 
 /* Responsive Design */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  .room-card {
+    padding: 1rem;
   }
 
   .room-name {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .room-description {
     font-size: 0.95rem;
+  }
+
+  .room-btn {
+    font-size: 1.5rem;
+    padding: 8px 12px;
+  }
+
+  .room-image {
+    height: 200px;
   }
 }

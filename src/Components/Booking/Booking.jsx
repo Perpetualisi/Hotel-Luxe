@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Booking.css';
 
-// ✨ Import motion for animation
 import { motion } from 'framer-motion';
 
 const Booking = () => {
@@ -12,7 +11,6 @@ const Booking = () => {
     guests: 1,
   });
 
-  // 📬 State to store submitted bookings
   const [bookings, setBookings] = useState([]);
 
   const handleChange = (e) => {
@@ -25,11 +23,9 @@ const Booking = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 📬 Save booking data
     const newBooking = { ...formData };
     setBookings((prev) => [...prev, newBooking]);
     alert(`Booking Info:\nCheck-in: ${formData.checkIn}\nCheck-out: ${formData.checkOut}\nRoom: ${formData.roomType}\nGuests: ${formData.guests}`);
-    // Reset form
     setFormData({
       checkIn: '',
       checkOut: '',
@@ -39,7 +35,6 @@ const Booking = () => {
   };
 
   return (
-    // ✨ Animate the booking section
     <motion.section
       id='booking'
       className="booking"
@@ -66,7 +61,6 @@ const Booking = () => {
         <button type="submit">Book Now</button>
       </form>
 
-      {/* 📬 Display submitted bookings */}
       {bookings.length > 0 && (
         <div className="booking-list">
           <h3>Submitted Bookings</h3>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Testimonials.css';
 
 const testimonials = [
@@ -20,17 +20,32 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const [current, setCurrent] = useState(0);
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section id='testimonials' className="testimonials">
-      <h2>What Our Guests Say</h2>
-      <div className="testimonial-slider">
-        {testimonials.map((t, index) => (
-          <div className="testimonial-card" key={index}>
-            <img src={t.image} alt={t.name} />
-            <p>"{t.review}"</p>
-            <h4>- {t.name}</h4>
-          </div>
-        ))}
+    <section id="testimonials" className="testimonials">
+      <h2 className="section-title">What Our Guests Say</h2>
+      <div className="carousel-container">
+        <button className="carousel-btn left" onClick={prevSlide}>&#10094;</button>
+        <div className="testimonial-slide">
+          <img src={testimonials[current].image} alt={testimonials[current].name} />
+          <p>"{testimonials[current].review}"</p>
+          <h4>- {testimonials[current].name}</h4>
+        </div>
+        <button className="carousel-btn right" onClick={nextSlide}>&#10095;</button>
       </div>
     </section>
   );

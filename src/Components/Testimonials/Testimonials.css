@@ -1,61 +1,98 @@
 .testimonials {
-  padding: 3rem 1rem;
-  background: #fff;
+  padding: 4rem 1rem;
   text-align: center;
+  background: #fff;
+  scroll-margin-top: 80px;
   animation: fadeIn 1s ease-in;
 }
 
-.testimonials h2 {
+.section-title {
   font-size: 2rem;
+  color: #003580;
   margin-bottom: 2rem;
-}
-
-.testimonial-slider {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.testimonial-card {
-  background: #f9f9f9;
-  padding: 1rem;
-  border-radius: 10px;
-  max-width: 300px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-}
-
-.testimonial-card img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-
-.testimonial-card p {
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
-
-.testimonial-card h4 {
-  color: #333;
   font-weight: bold;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.carousel-container {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  background: #fdfdfd;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (max-width: 480px) {
-  .testimonial-slider {
-    flex-direction: column;
-    align-items: center;
+.testimonial-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.testimonial-slide img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #ffd700;
+}
+
+.testimonial-slide p {
+  font-style: italic;
+  color: #444;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.testimonial-slide h4 {
+  color: #222;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.2);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 50%;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.4);
+}
+
+.carousel-btn.left {
+  left: -10px;
+}
+
+.carousel-btn.right {
+  right: -10px;
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    padding: 1.5rem;
+    width: 90%;
   }
+
+  .carousel-btn {
+    font-size: 1.5rem;
+    padding: 4px 8px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }

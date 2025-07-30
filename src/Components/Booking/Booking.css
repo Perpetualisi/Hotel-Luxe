@@ -2,7 +2,6 @@
   padding: 2rem;
   background: #f9f9f9;
   text-align: center;
-  /* ✨ Optional: smooth fade-in if JS fails */
   animation: fadeIn 0.8s ease forwards;
 }
 
@@ -41,7 +40,6 @@
   background: #555;
 }
 
-/* 📬 Styles for submitted booking list */
 .booking-list {
   margin-top: 2rem;
   text-align: left;
@@ -70,7 +68,6 @@
   font-size: 0.95rem;
 }
 
-/* ✨ Fade-in animation keyframes */
 @keyframes fadeIn {
   from {
     opacity: 0;

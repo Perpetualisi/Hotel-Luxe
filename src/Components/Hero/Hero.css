@@ -1,114 +1,93 @@
 .hero {
   min-height: 100vh;
-  width: 100%; 
-  background: url('/images/hero.jpg') no-repeat center center;
-  background-size: cover;
+  width: 100%;
+  background: url('/images/hero.jpg') no-repeat center center/cover;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: black;
-  text-align: center;
   position: relative;
-  overflow: hidden;
   padding: 0 20px;
   box-sizing: border-box;
+  text-align: center;
 }
 
-.hero-img {
+.hero-overlay {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: -1;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 800px;
+  animation: fadeIn 1.5s ease-in;
 }
 
-.navbar .nav-links li a {
-  color: white !important;
-}
-
-.hero h1 {
+.hero-title {
   font-size: 3rem;
-  margin-bottom: 10px;
-  max-width: 100%;
-  word-wrap: break-word;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  max-width: 100%;
-  word-wrap: break-word;
+.hero-title span {
+  color: #ffd700;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #eee;
 }
 
 .btn {
   background: #ffd700;
   color: #003580;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 1.2rem;
+  padding: 12px 24px;
+  font-size: 1.1rem;
   font-weight: bold;
-  border-radius: 5px;
-  transition: 0.3s;
-  max-width: 100%;
-  word-wrap: break-word;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  display: inline-block;
 }
 
 .btn:hover {
-  background: #ffa500;
-}
-.hero-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  line-height: 1.2;
+  background: #f0a500;
 }
 
-.hero-title span {
-  color: hsl(56, 92%, 44%); /* gold or brand color */
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.hero-subtitle {
-  margin: 1rem 0;
-  font-size: 1.2rem;
-  color: #f0f0f0;
-}
-
-
-/* ✅ Mobile Responsive Fix */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .hero {
-    padding: 0 15px;
-    text-align: center;
+  .hero-title {
+    font-size: 2.2rem;
   }
 
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
+  .hero-subtitle {
     font-size: 1rem;
   }
 
   .btn {
     font-size: 1rem;
-    padding: 8px 16px;
+    padding: 10px 18px;
   }
 }
 
-/* ✅ Global fix for shaking on mobile */
+/* Global Fix */
 html, body {
   margin: 0;
   padding: 0;
